@@ -1,17 +1,18 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { View, Text } from "react-native";
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import {Screens} from '../constants';
-import * as ScreenSet from '../screens';
+import { Screens } from "../constants";
+import * as ScreenSet from "../screens";
 
 export default function RootStackNavigator() {
-
-    const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator();
   return (
-    <Stack.Navigator>
-    <Stack.Screen name={Screens.SCREEN_ONE}component={ScreenSet.ScreenOne} />
-    <Stack.Screen name={Screens.SCREEN_TWO}component={ScreenSet.ScreenTwo} />
-  </Stack.Navigator>
-  )
+    <Stack.Navigator
+      screenOptions={{ headerShown: false, gestureEnabled: false }}
+    >
+      <Stack.Screen name={Screens.SCREEN_ONE} component={ScreenSet.ScreenOne} />
+      <Stack.Screen name={Screens.SCREEN_TWO} component={ScreenSet.ScreenTwo} />
+    </Stack.Navigator>
+  );
 }
