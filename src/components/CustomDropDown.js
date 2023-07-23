@@ -5,7 +5,7 @@ import { SelectList } from "react-native-dropdown-select-list";
 const CustomDropDown = (props) => {
   return (
     <View>
-        <Text style={styles.text}>Destination</Text>
+        <Text style={styles.text}>{props.name}</Text>
            <SelectList
       //  setSelected={(value) => {
 
