@@ -14,7 +14,7 @@ import {
 } from 'react-native-responsive-dimensions';
 
 import { Screens } from "../constants";
-import { Header } from "../components";
+import { Header,CustomTextInput,CustomDropDown,CustomButton } from "../components";
 
 const ScreenOne = (props) => {
   return (
@@ -23,6 +23,19 @@ const ScreenOne = (props) => {
       style={styles.container}
     >
       <Header />
+      <CustomTextInput 
+      feildName='Customer name'
+      />
+      <CustomTextInput 
+      feildName='Email address'
+      />
+      <CustomTextInput 
+      feildName='Contact number'
+      />
+      <CustomDropDown/>
+      <CustomButton/>
+
+
     </LinearGradient>
   );
 };
