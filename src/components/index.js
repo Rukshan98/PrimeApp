@@ -5,6 +5,8 @@ import CustomButton from "./CustomButton";
 import CustomBackButton from "./CustomBackButton";
 import ServiceDropDown from "./ServiceDropDown";
 import PackageDropDown from "./PackageDropDown";
+import ComodityDropDown from "./ComodityDropDown";
+import CalculateWeight from "./CalculateWeight";
 
 export{
     Header,
@@ -13,5 +15,7 @@ export{
     CustomButton,
     CustomBackButton,
     ServiceDropDown,
-    PackageDropDown
+    PackageDropDown,
+    ComodityDropDown,
+    CalculateWeight
 }

@@ -76,7 +76,7 @@ const ScreenOne = (props) => {
         <PackageDropDown token={token} packageId={setPackageId} />
         <CustomButton
           name="Next"
-          navigation={() => props.navigation.navigate(Screens.SCREEN_TWO)}
+          navigation={() => props.navigation.navigate(Screens.SCREEN_TWO, { tokenId: token })}
         />
       </ScrollView>
     </LinearGradient>
