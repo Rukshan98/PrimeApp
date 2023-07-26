@@ -19,7 +19,7 @@ const Header = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 40,
+    marginVertical: 30,
     flexDirection: "row",
   },
   headingText: {

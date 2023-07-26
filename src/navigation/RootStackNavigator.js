@@ -13,6 +13,7 @@ export default function RootStackNavigator() {
     >
       <Stack.Screen name={Screens.SCREEN_ONE} component={ScreenSet.ScreenOne} />
       <Stack.Screen name={Screens.SCREEN_TWO} component={ScreenSet.ScreenTwo} />
+      <Stack.Screen name={Screens.SCREEN_THREE} component={ScreenSet.ScreenThree} />
     </Stack.Navigator>
   );
 }

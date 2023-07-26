@@ -23,10 +23,18 @@ import {
   CustomButton,
   ComodityDropDown,
   CalculateWeight,
+  SubHeader,
+  ServiceDropDown,
+  PackageDropDown
 } from "../components";
 
 const ScreenTwo = (props) => {
   const token = props.route.params.tokenId;
+
+  const [serviceId, setServiceId] = useState();
+  console.log("the serviceID--->", serviceId);
+  const [packageId, setPackageId] = useState();
+  console.log("the packageID--->", packageId);
   const [commodityId, setCommodityId] = useState();
   console.log("the commodity Id--->", commodityId);
   const [volWeight, setVolWeight] = useState();
@@ -39,13 +47,16 @@ const ScreenTwo = (props) => {
     >
       <StatusBar backgroundColor="white" barStyle="dark-content" />
       <CustomBackButton navigation={() => props.navigation.goBack()} />
-      <ScrollView>
+      <SubHeader heading='Shipment Details'/>
+      <ScrollView showsVerticalScrollIndicator={false}>
+      <ServiceDropDown token={token} serviceId={setServiceId} />
+        <PackageDropDown token={token} packageId={setPackageId} />
         <ComodityDropDown token={token} commodityId={setCommodityId} />
         <CustomTextInput feildName="Quantity" />
         <CalculateWeight volumetric={setVolWeight} />
         <CustomButton
           name="Next"
-          navigation={() => props.navigation.navigate(Screens.SCREEN_TWO)}
+          navigation={() => props.navigation.navigate(Screens.SCREEN_THREE)}
         />
       </ScrollView>
     </LinearGradient>

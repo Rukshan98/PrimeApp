@@ -7,6 +7,7 @@ import ServiceDropDown from "./ServiceDropDown";
 import PackageDropDown from "./PackageDropDown";
 import ComodityDropDown from "./ComodityDropDown";
 import CalculateWeight from "./CalculateWeight";
+import SubHeader from "./SubHeader";
 
 export{
     Header,
@@ -17,5 +18,6 @@ export{
     ServiceDropDown,
     PackageDropDown,
     ComodityDropDown,
-    CalculateWeight
+    CalculateWeight,
+    SubHeader
 }

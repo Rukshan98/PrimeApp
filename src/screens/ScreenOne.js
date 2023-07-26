@@ -21,6 +21,7 @@ import {
   CustomButton,
   ServiceDropDown,
   PackageDropDown,
+  SubHeader
 } from "../components";
 
 import { Login } from "../services/Login";
@@ -33,11 +34,11 @@ const ScreenOne = (props) => {
   console.log("the serviceID--->", serviceId);
   const [packageId, setPackageId] = useState();
   console.log("the packageID--->", packageId);
-  const [name,setName] = useState();
+  const [name, setName] = useState();
   console.log("the name--->", name);
-  const [email,setEmail] = useState();
+  const [email, setEmail] = useState();
   console.log("the Email--->", email);
-  const [mobile,setMobile] = useState();
+  const [mobile, setMobile] = useState();
   console.log("the Mobile--->", email);
 
   const initial = () => {
@@ -51,14 +52,18 @@ const ScreenOne = (props) => {
       .finally(() => setLoading(false));
   };
 
-  const validate = () =>{
-    if(name == undefined || email == undefined || mobile == undefined || serviceId == undefined || packageId == undefined){
-      return alert('Please fill all feilds!!!')
+  const validate = () => {
+    if (
+      name == undefined ||
+      email == undefined ||
+      mobile == undefined 
+    ) {
+      return alert("Please fill all feilds!!!");
       // props.navigation.navigate(Screens.SCREEN_TWO, { tokenId: token })
-    }else{
-      props.navigation.navigate(Screens.SCREEN_TWO, { tokenId: token })
+    } else {
+      props.navigation.navigate(Screens.SCREEN_TWO, { tokenId: token });
     }
-  }
+  };
 
   useFocusEffect(
     useCallback(() => {
@@ -83,16 +88,25 @@ const ScreenOne = (props) => {
     >
       <StatusBar backgroundColor="white" barStyle="dark-content" />
       <Header />
+      <SubHeader heading='Customer Details'/>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <CustomTextInput feildName="Customer name" value={setName} data={name} />
-        <CustomTextInput feildName="Email address" value={setEmail} data={email}/>
-        <CustomTextInput feildName="Contact number"value={setMobile} data={mobile} />
-        <ServiceDropDown token={token} serviceId={setServiceId}  />
-        <PackageDropDown token={token} packageId={setPackageId} />
-        <CustomButton
-          name="Next"
-          navigation={() => validate() }
+        <CustomTextInput
+          feildName="Customer name"
+          value={setName}
+          data={name}
         />
+        <CustomTextInput
+          feildName="Email address"
+          value={setEmail}
+          data={email}
+        />
+        <CustomTextInput
+          feildName="Contact number"
+          value={setMobile}
+          data={mobile}
+        />
+   
+        <CustomButton name="Next" navigation={() => validate()} />
       </ScrollView>
     </LinearGradient>
   );

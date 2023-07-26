@@ -41,7 +41,7 @@ const ServiceDropDown = (props) => {
           props.serviceId(value);
           // setSelectedService(value);
         }}
-        onSelect={() => forService()}
+        // onSelect={() => forService()}
         data={services.map((item) => {
           return { key: item.service_id, value: item.en_name };
         })}
