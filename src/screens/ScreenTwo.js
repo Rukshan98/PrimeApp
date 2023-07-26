@@ -25,7 +25,7 @@ import {
   CalculateWeight,
   SubHeader,
   ServiceDropDown,
-  PackageDropDown
+  PackageDropDown,
 } from "../components";
 
 const ScreenTwo = (props) => {
@@ -47,16 +47,16 @@ const ScreenTwo = (props) => {
     >
       <StatusBar backgroundColor="white" barStyle="dark-content" />
       <CustomBackButton navigation={() => props.navigation.goBack()} />
-      <SubHeader heading='Shipment Details'/>
+      <SubHeader heading="Shipment Details" />
       <ScrollView showsVerticalScrollIndicator={false}>
-      <ServiceDropDown token={token} serviceId={setServiceId} />
+        <ServiceDropDown token={token} serviceId={setServiceId} />
         <PackageDropDown token={token} packageId={setPackageId} />
         <ComodityDropDown token={token} commodityId={setCommodityId} />
         <CustomTextInput feildName="Quantity" />
         <CalculateWeight volumetric={setVolWeight} />
         <CustomButton
           name="Next"
-          navigation={() => props.navigation.navigate(Screens.SCREEN_THREE)}
+          navigation={() => props.navigation.navigate(Screens.SCREEN_THREE,{ tokenId: token })}
         />
       </ScrollView>
     </LinearGradient>

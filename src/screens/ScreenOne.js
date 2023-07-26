@@ -58,8 +58,8 @@ const ScreenOne = (props) => {
       email == undefined ||
       mobile == undefined 
     ) {
-      return alert("Please fill all feilds!!!");
-      // props.navigation.navigate(Screens.SCREEN_TWO, { tokenId: token })
+      // return alert("Please fill all feilds!!!");
+      props.navigation.navigate(Screens.SCREEN_TWO, { tokenId: token })
     } else {
       props.navigation.navigate(Screens.SCREEN_TWO, { tokenId: token });
     }
