@@ -22,16 +22,15 @@ import {
   CustomDropDown,
   CustomButton,
   ComodityDropDown,
-  CalculateWeight
+  CalculateWeight,
 } from "../components";
 
 const ScreenTwo = (props) => {
   const token = props.route.params.tokenId;
   const [commodityId, setCommodityId] = useState();
   console.log("the commodity Id--->", commodityId);
-  const [volWeight,setVolWeight] = useState()
+  const [volWeight, setVolWeight] = useState();
   console.log("the volumetric weight--->", volWeight);
- 
 
   return (
     <LinearGradient
@@ -42,9 +41,8 @@ const ScreenTwo = (props) => {
       <CustomBackButton navigation={() => props.navigation.goBack()} />
       <ScrollView>
         <ComodityDropDown token={token} commodityId={setCommodityId} />
-        <CustomTextInput feildName="Quantity"  />
-        <CalculateWeight volumetric={setVolWeight}/>
-     
+        <CustomTextInput feildName="Quantity" />
+        <CalculateWeight volumetric={setVolWeight} />
         <CustomButton
           name="Next"
           navigation={() => props.navigation.navigate(Screens.SCREEN_TWO)}

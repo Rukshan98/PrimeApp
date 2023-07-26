@@ -19,6 +19,7 @@ const PackageDropDown = (props) => {
 
     const forpackage = () => {
         for (i = 0; i < packages.length; i++) {
+          // console.log(selectedPackage)
           if (packages[i].en_name == selectedPackage) {
             props.packageId(i + 1);
             return;

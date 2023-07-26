@@ -13,18 +13,19 @@ const ServiceDropDown = (props) => {
     getServices(props.token)
       .then((response) => {
         setServices(response.data.data);
+        // console.log('service array - >',response.data.data)
       })
       .catch(console.error);
   };
 
-  const forService = () => {
-    for (i = 0; i < services.length; i++) {
-      if (services[i].en_name == selectedService) {
-        props.serviceId(i + 1);
-        return;
-      }
-    }
-  };
+  // const forService = () => {
+  //   for (i = 0; i < services.length; i++) {
+  //     if (services[i].en_name == selectedService) {
+  //       props.serviceId(i + 1);
+  //       return;
+  //     }
+  //   }
+  // };
 
   useFocusEffect(
     useCallback(() => {
@@ -37,13 +38,13 @@ const ServiceDropDown = (props) => {
       <Text style={styles.text}>Service</Text>
       <SelectList
         setSelected={(value) => {
-          setSelectedService(value);
+          props.serviceId(value);
+          // setSelectedService(value);
         }}
         onSelect={() => forService()}
         data={services.map((item) => {
           return { key: item.service_id, value: item.en_name };
         })}
-        save="value"
         boxStyles={styles.container}
         fontFamily="Poppins"
         inputStyles={styles.list}
