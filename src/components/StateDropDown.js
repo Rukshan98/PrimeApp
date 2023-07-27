@@ -15,7 +15,7 @@ const StateDropDown = (props) => {
         getState(props.token,props.cId)
           .then((response) => {
             setState(response.data.states);
-            console.log('state--->',response.data.states)
+            // console.log('state--->',response.data.states)
           })
           .catch(console.error);
       };
@@ -24,7 +24,7 @@ const StateDropDown = (props) => {
         for (i = 0; i < state.length; i++) {
           if (state[i].name == selectedState) {
             console.log('true')
-            // props.stateId(i + 1);
+            props.stateId(i + 1);
             return;
           }
         }

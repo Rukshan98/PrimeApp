@@ -10,6 +10,7 @@ import CalculateWeight from "./CalculateWeight";
 import SubHeader from "./SubHeader";
 import CountryDropDown from "./CountryDropDown";
 import StateDropDown from "./StateDropDown";
+import SalesDropDown from "./SalesDropDown";
 
 export{
     Header,
@@ -23,5 +24,6 @@ export{
     CalculateWeight,
     SubHeader,
     CountryDropDown,
-    StateDropDown
+    StateDropDown,
+    SalesDropDown
 }

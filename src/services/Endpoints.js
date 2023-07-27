@@ -8,6 +8,7 @@ const baseURL = 'http://3.17.9.211/api/';
  const country = 'utils/countries';
  const state = 'utils/state/'
  const booking = 'inquiry/store'
+ const sales = 'salesmen'
 
 
 
@@ -20,6 +21,7 @@ export default {
   commodity,
   country,
   booking,
-  state
+  state,
+  sales
 
 };
