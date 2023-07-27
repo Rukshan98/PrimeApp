@@ -18,14 +18,14 @@ const ServiceDropDown = (props) => {
       .catch(console.error);
   };
 
-  // const forService = () => {
-  //   for (i = 0; i < services.length; i++) {
-  //     if (services[i].en_name == selectedService) {
-  //       props.serviceId(i + 1);
-  //       return;
-  //     }
-  //   }
-  // };
+  const forService = () => {
+    for (i = 0; i < services.length; i++) {
+      if (services[i].service_id == selectedService) {
+        props.service(services[i].en_name);
+        return;
+      }
+    }
+  };
 
   useFocusEffect(
     useCallback(() => {
@@ -39,9 +39,9 @@ const ServiceDropDown = (props) => {
       <SelectList
         setSelected={(value) => {
           props.serviceId(value);
-          // setSelectedService(value);
+          setSelectedService(value);
         }}
-        // onSelect={() => forService()}
+        onSelect={() => forService()}
         data={services.map((item) => {
           return { key: item.service_id, value: item.en_name };
         })}

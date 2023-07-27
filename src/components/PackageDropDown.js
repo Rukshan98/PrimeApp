@@ -39,6 +39,7 @@ const PackageDropDown = (props) => {
       <SelectList
         setSelected={(value) => {
           setSelectedPackage(value);
+          props.package(value)
         }}
         onSelect={() => forpackage()}
         data={packages.map((item) => {

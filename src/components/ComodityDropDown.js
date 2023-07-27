@@ -37,6 +37,7 @@ const ComodityDropDown = (props) => {
       <SelectList
         setSelected={(value) => {
           setSelectedCommodity(value);
+          props.commodity(value)
         }}
         onSelect={() => forCommodity()}
         data={commodity.map((item) => {

@@ -3,18 +3,12 @@ import React, { useState } from "react";
 import { responsiveHeight } from "react-native-responsive-dimensions";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
 
-const CustomTextInput = (props) => {
-
+const CustomLable = (props) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{props.feildName}</Text>
-      <TextInput
-        value={props.data}
-        style={styles.textInputContainer}
-     
-        keyboardType={props.numberpad ? 'numeric' : 'default'}
-        onChangeText={(value) => props.value(value)}
-      />
+      <Text style={styles.text}>
+        {props.feildName} : {props.value}
+      </Text>
     </View>
   );
 };
@@ -34,7 +28,8 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins",
     marginVertical: 10,
     color: "#2F679B",
-    fontSize:15
+    fontSize: 15,
   },
 });
-export default CustomTextInput;
+
+export default CustomLable;

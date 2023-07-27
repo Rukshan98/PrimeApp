@@ -19,8 +19,9 @@ const styles = StyleSheet.create({
     text:{
         fontFamily:'Poppins',
         color: "#2F679B",
-        fontSize:responsiveFontSize(2.5),
-        textDecorationLine:'underline'
+        fontSize:responsiveFontSize(3),
+        textDecorationLine:'underline',
+
     }
     
 })

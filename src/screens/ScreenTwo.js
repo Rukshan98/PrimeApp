@@ -30,15 +30,55 @@ import {
 
 const ScreenTwo = (props) => {
   const token = props.route.params.tokenId;
+  const name = props.route.params.name;
+  const email = props.route.params.email;
+  const mobile = props.route.params.mobile;
+
 
   const [serviceId, setServiceId] = useState();
+  const [service, setService] = useState();
   console.log("the serviceID--->", serviceId);
+  console.log("the service--->", service);
   const [packageId, setPackageId] = useState();
+  const [packageN, setPackage] = useState();
   console.log("the packageID--->", packageId);
+  console.log("the package--->", packageN);
   const [commodityId, setCommodityId] = useState();
+  const [commodity, setCommodity] = useState();
   console.log("the commodity Id--->", commodityId);
+  console.log("the commodity --->", commodity);
   const [volWeight, setVolWeight] = useState();
   console.log("the volumetric weight--->", volWeight);
+  const [weight, setWeight] = useState();
+  const [qty, setqty] = useState();
+
+  const validate = () => {
+    if (
+      serviceId == undefined ||
+      packageId == undefined ||
+      commodityId == undefined ||
+      volWeight == undefined ||
+      weight == undefined
+    ) {
+      alert("Please fill all feilds!!!");
+    } else {
+      props.navigation.navigate(Screens.SCREEN_THREE, {
+        name: name,
+        email: email,
+        mobile: mobile,
+        serviceId: serviceId,
+        packageId: packageId,
+        commodityId: commodityId,
+        volWeight: volWeight,
+        weight: weight,
+        service:service,
+        package:packageN,
+        commodity:commodity,
+        qty:qty,
+        tokenId: token,
+      });
+    }
+  };
 
   return (
     <LinearGradient
@@ -49,15 +89,13 @@ const ScreenTwo = (props) => {
       <CustomBackButton navigation={() => props.navigation.goBack()} />
       <SubHeader heading="Shipment Details" />
       <ScrollView showsVerticalScrollIndicator={false}>
-        <ServiceDropDown token={token} serviceId={setServiceId} />
-        <PackageDropDown token={token} packageId={setPackageId} />
-        <ComodityDropDown token={token} commodityId={setCommodityId} />
-        <CustomTextInput feildName="Quantity" />
+        <ServiceDropDown token={token} serviceId={setServiceId} service={setService}/>
+        <PackageDropDown token={token} packageId={setPackageId} package={setPackage}/>
+        <ComodityDropDown token={token} commodityId={setCommodityId} commodity={setCommodity}/>
+        <CustomTextInput feildName="Weight" value={setWeight}   numberpad={true}/>
+        <CustomTextInput feildName="Quantity" value={setqty}   numberpad={true}/>
         <CalculateWeight volumetric={setVolWeight} />
-        <CustomButton
-          name="Next"
-          navigation={() => props.navigation.navigate(Screens.SCREEN_THREE,{ tokenId: token })}
-        />
+        <CustomButton name="Next" navigation={() => validate()} />
       </ScrollView>
     </LinearGradient>
   );

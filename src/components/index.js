@@ -11,6 +11,7 @@ import SubHeader from "./SubHeader";
 import CountryDropDown from "./CountryDropDown";
 import StateDropDown from "./StateDropDown";
 import SalesDropDown from "./SalesDropDown";
+import CustomLable from "./CustomLable";
 
 export{
     Header,
@@ -25,5 +26,6 @@ export{
     SubHeader,
     CountryDropDown,
     StateDropDown,
-    SalesDropDown
+    SalesDropDown,
+    CustomLable
 }

@@ -30,10 +30,7 @@ const ScreenOne = (props) => {
   const [token, setTooken] = useState();
   const [loading, setLoading] = useState(true);
 
-  const [serviceId, setServiceId] = useState();
-  console.log("the serviceID--->", serviceId);
-  const [packageId, setPackageId] = useState();
-  console.log("the packageID--->", packageId);
+
   const [name, setName] = useState();
   console.log("the name--->", name);
   const [email, setEmail] = useState();
@@ -58,10 +55,15 @@ const ScreenOne = (props) => {
       email == undefined ||
       mobile == undefined 
     ) {
-      // return alert("Please fill all feilds!!!");
-      props.navigation.navigate(Screens.SCREEN_TWO, { tokenId: token })
+      return alert("Please fill all feilds!!!");
+      // props.navigation.navigate(Screens.SCREEN_TWO, { tokenId: token })
     } else {
-      props.navigation.navigate(Screens.SCREEN_TWO, { tokenId: token });
+      props.navigation.navigate(Screens.SCREEN_TWO, {
+        name:name,
+        email:email,
+        mobile:mobile,
+        tokenId: token
+         });
     }
   };
 
@@ -88,12 +90,13 @@ const ScreenOne = (props) => {
     >
       <StatusBar backgroundColor="white" barStyle="dark-content" />
       <Header />
-      <SubHeader heading='Customer Details'/>
+      {/* <SubHeader heading='Customer Details'/> */}
       <ScrollView showsVerticalScrollIndicator={false}>
         <CustomTextInput
           feildName="Customer name"
           value={setName}
           data={name}
+      
         />
         <CustomTextInput
           feildName="Email address"
@@ -104,6 +107,7 @@ const ScreenOne = (props) => {
           feildName="Contact number"
           value={setMobile}
           data={mobile}
+          numberpad={true}
         />
    
         <CustomButton name="Next" navigation={() => validate()} />

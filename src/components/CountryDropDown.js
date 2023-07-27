@@ -41,6 +41,7 @@ const CountryDropDown = (props) => {
     <SelectList
       setSelected={(value) => {
         setSelectedCountry(value);
+        props.country(value)
       }}
       onSelect={() => forCountry()}
       data={country.map((item) => {

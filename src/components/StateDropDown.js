@@ -43,6 +43,7 @@ const StateDropDown = (props) => {
     <SelectList
       setSelected={(value) => {
         setSelectedState(value);
+        props.state(value)
       }}
       onSelect={() => forState()}
       data={state.map((item) => {
