@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "PrimeApp",
-    "slug": "PrimeApp",
+    "name": "Prime Inquiry",
+    "slug": "Prime Inquiry",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/playstore.png",
+    "icon": "./assets/ic_launcher.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/Untitled.png",
+      "image": "./assets/splash1.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#1E1E1E"
     },
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/playstore.png",
+        "foregroundImage": "./assets/ic_launcher.png",
         "backgroundColor": "#fff"
       }
     },
