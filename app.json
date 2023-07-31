@@ -1,13 +1,13 @@
 {
   "expo": {
     "name": "Prime Inquiry",
-    "slug": "Prime Inquiry",
+    "slug": "PrimeInquiry",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/ic_launcher.png",
+    "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash1.jpg",
+      "image": "./assets/Untitled.png",
       "resizeMode": "contain",
       "backgroundColor": "#1E1E1E"
     },
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/ic_launcher.png",
+        "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#fff"
       }
     },
