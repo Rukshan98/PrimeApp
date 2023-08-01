@@ -26,7 +26,9 @@ import {
   CountryDropDown,
   StateDropDown,
   SalesDropDown,
-  CustomLable
+  CustomLable,
+  CalculateWeight
+
 } from "../components";
 
 import { postBooking } from "../services/Booking";
@@ -52,7 +54,8 @@ const SubmitScreen = (props) => {
   const service = props.route.params.service;
   const packageN = props.route.params.package;
   const commodity = props.route.params.commodity;
-  const qty = props.route.params.qty;
+  const qty = props.route.params.qty;  
+  
 
   const [salesId, setSalesId] = useState();
   console.log("sales id-->", salesId);
@@ -73,10 +76,12 @@ const onClickSubmit = () =>{
     d_state_id : dState,
     quantity : qty,
     leng : 50,
-    width : 50,
+    width : width,
     height : 50,
     weight : weight,
-    remarks: "Test"
+    remarks: "Test",
+    sales_id: salesId
+
 }
 
 postBooking(token,payload).then((response)=>{
@@ -89,9 +94,6 @@ postBooking(token,payload).then((response)=>{
 })
 
 }
-
-
-
 
   return (
     <LinearGradient
@@ -114,8 +116,7 @@ postBooking(token,payload).then((response)=>{
         <CustomLable feildName='Origin' value={oCountry}/>
         <CustomLable feildName='Origin State' value={oStateN}/>
         <CustomLable feildName='Destination' value={dCountry}/>
-        <CustomLable feildName='Origin State' value={dStateN}/>
-        
+        <CustomLable feildName='Origin State' value={dStateN}/>       
 
         <SalesDropDown token={token} salesId={setSalesId} />
         <CustomButton name="Submit" navigation={() => onClickSubmit()} />
