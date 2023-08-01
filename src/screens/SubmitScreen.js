@@ -55,7 +55,7 @@ const SubmitScreen = (props) => {
   const packageN = props.route.params.package;
   const commodity = props.route.params.commodity;
   const qty = props.route.params.qty;  
-  
+
 
   const [salesId, setSalesId] = useState();
   console.log("sales id-->", salesId);
@@ -76,7 +76,7 @@ const onClickSubmit = () =>{
     d_state_id : dState,
     quantity : qty,
     leng : 50,
-    width : width,
+    width : 50,
     height : 50,
     weight : weight,
     remarks: "Test",
