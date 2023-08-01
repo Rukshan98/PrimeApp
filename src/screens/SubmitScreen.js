@@ -54,7 +54,16 @@ const SubmitScreen = (props) => {
   const service = props.route.params.service;
   const packageN = props.route.params.package;
   const commodity = props.route.params.commodity;
-  const qty = props.route.params.qty;  
+  const qty = props.route.params.qty; 
+  const height = props.route.params.height; 
+  const width = props.route.params.width; 
+  const length = props.route.params.length;  
+
+  const  date = new Date().getDate();
+  const month = new Date().getMonth() + 1;
+  const year = new Date().getFullYear();
+  const time = year+'/'+month+'/'+date;
+  console.log('the date:',date+'/'+month+'/'+year)
 
 
   const [salesId, setSalesId] = useState();
@@ -62,10 +71,10 @@ const SubmitScreen = (props) => {
 
 const onClickSubmit = () =>{
   const payload = {   
-    date : "2023-6-11",
+    date : time,
     customer_name :name,
     email_add : email ,
-    address : "Diera Dubai",
+    address : "N/A",
     contact_no : mobile,
     service_id : serviceId,
     commodity_id : commodityId,
@@ -75,9 +84,9 @@ const onClickSubmit = () =>{
     destination_id : dCountryId,
     d_state_id : dState,
     quantity : qty,
-    leng : 50,
-    width : 50,
-    height : 50,
+    leng : length,
+    width :width,
+    height : height,
     weight : weight,
     remarks: "Test",
     sales_id: salesId
@@ -101,8 +110,8 @@ postBooking(token,payload).then((response)=>{
       style={styles.container}
     >
       <StatusBar backgroundColor="white" barStyle="dark-content" />
-      <CustomBackButton navigation={() => props.navigation.goBack()} />
-      <SubHeader heading="Summary" />
+      <CustomBackButton navigation={() => props.navigation.goBack()} heading="Summary" />
+      <SubHeader />
       <ScrollView showsVerticalScrollIndicator={false}>
         <CustomLable feildName='Customer Name' value={name}/>
         <CustomLable feildName='Customer Email' value={email}/>
@@ -117,6 +126,9 @@ postBooking(token,payload).then((response)=>{
         <CustomLable feildName='Origin State' value={oStateN}/>
         <CustomLable feildName='Destination' value={dCountry}/>
         <CustomLable feildName='Origin State' value={dStateN}/>       
+        <CustomLable feildName='Height' value={height}/>
+        <CustomLable feildName='Width' value={width}/>
+        <CustomLable feildName='Length' value={length}/>
 
         <SalesDropDown token={token} salesId={setSalesId} />
         <CustomButton name="Submit" navigation={() => onClickSubmit()} />

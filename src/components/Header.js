@@ -19,18 +19,21 @@ const Header = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 30,
+    marginTop: 50,
     flexDirection: "row",
+    marginBottom:50
   },
   headingText: {
-    fontSize: responsiveFontSize(3.5),
-    fontFamily: "Poppins",
+    fontFamily: "PoppinsB",
+    marginVertical: 10,
+    fontSize:responsiveFontSize(5),
     color: "#2F679B",
   },
   headerImage: {
     flex: 1,
-    height: 80,
-    resizeMode: "stretch",
+    height: 50,
+    resizeMode: "contain",
+    marginTop:30
   },
 });
 

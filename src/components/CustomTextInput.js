@@ -1,7 +1,9 @@
 import { View, Text, TextInput, StyleSheet } from "react-native";
 import React, { useState } from "react";
-import { responsiveHeight } from "react-native-responsive-dimensions";
+import { responsiveHeight,responsiveFontSize } from "react-native-responsive-dimensions";
 import { useSafeAreaFrame } from "react-native-safe-area-context";
+
+
 
 const CustomTextInput = (props) => {
 
@@ -31,10 +33,10 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   text: {
-    fontFamily: "Poppins",
+    fontFamily: "PoppinsB",
     marginVertical: 10,
-    color: "#2F679B",
-    fontSize:15
+    color: "#000",
+    fontSize:responsiveFontSize(2)
   },
 });
 export default CustomTextInput;

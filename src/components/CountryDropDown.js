@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 import React, { useState, useCallback } from "react";
 import { SelectList } from "react-native-dropdown-select-list";
 import { useFocusEffect } from "@react-navigation/native";
+import { responsiveFontSize } from "react-native-responsive-dimensions";
 
 import { getCountry } from "../services/Country";
 
@@ -65,9 +66,10 @@ const styles = StyleSheet.create({
       marginVertical: 5,
     },
     text: {
-      fontFamily: "Poppins",
+      fontFamily: "PoppinsB",
       marginVertical: 10,
-      color: "#2F679B",
+      color: "#000",
+      fontSize:responsiveFontSize(2)
     },
     list: {
       color: "#2F679B",

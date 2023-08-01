@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TextInput } from "react-native";
 import React,{useState} from "react";
-import { responsiveHeight } from "react-native-responsive-dimensions";
+import { responsiveHeight,responsiveFontSize } from "react-native-responsive-dimensions";
 
 const CalculateWeight = (props) => {
     const [length,setLength] = useState()
@@ -11,6 +11,9 @@ const CalculateWeight = (props) => {
     const VolumetricWeight = () => {
         let weight = (length * width * height) / 5000;
         props.volumetric(weight)
+        props.H(height)
+        props.W(width)
+        props.L(length)
         setTotal(weight)
      
       };
@@ -84,15 +87,20 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   text: {
-    fontFamily: "Poppins",
-    marginBottom: 10,
-    color: "#2F679B",
+    fontFamily: "PoppinsB",
+    marginVertical: 10,
+    color: "#000",
+    fontSize:responsiveFontSize(2)
   },
   weightText:{
-    marginLeft:10,
-    fontFamily:'Poppins',
+   
+    fontFamily: "PoppinsB",
+    marginVertical: 10,
+    color: "#000",
+    fontSize:responsiveFontSize(2),
     color:'red',
-    textDecorationLine:'underline'
+    textDecorationLine:'underline',
+    marginLeft:5
   }
 });
 export default CalculateWeight;

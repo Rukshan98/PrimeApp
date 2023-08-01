@@ -6,8 +6,7 @@ import { responsiveFontSize } from "react-native-responsive-dimensions";
 
 import { getState } from "../services/State";
 
-const StateDropDown = (props) => {
-
+const DStateDropDown = (props) => {
     const [state, setState] = useState([]);
     const [selectedState, setSelectedState] = useState("");
     const [loading,setLoading] = useState(true)
@@ -91,4 +90,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default StateDropDown
+export default DStateDropDown

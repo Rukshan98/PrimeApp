@@ -25,6 +25,7 @@ import {
   CustomBackButton,
   CountryDropDown,
   StateDropDown,
+  DStateDropDown
 } from "../components";
 
 const ScreenThree = (props) => {
@@ -41,6 +42,10 @@ const ScreenThree = (props) => {
   const packageN = props.route.params.package;
   const commodity = props.route.params.commodity;
   const qty = props.route.params.qty;
+  const height = props.route.params.height; 
+  const width = props.route.params.width; 
+  const length = props.route.params.length; 
+
 
 
   const [oCountryId, setOCountryId] = useState();
@@ -78,7 +83,6 @@ const ScreenThree = (props) => {
         commodityId: commodityId,
         volWeight: volWeight,
         weight: weight,
-        weight: weight,
         service:service,
         package:packageN,
         commodity:commodity,
@@ -92,9 +96,14 @@ const ScreenThree = (props) => {
         dStateN:dStateN,
         qty:qty,
         tokenId: token,
+        height:height,
+        width:width,
+        length:length
       });
     }
   };
+
+  
 
   return (
     <LinearGradient
@@ -102,8 +111,7 @@ const ScreenThree = (props) => {
       style={styles.container}
     >
       <StatusBar backgroundColor="white" barStyle="dark-content" />
-      <CustomBackButton navigation={() => props.navigation.goBack()} />
-      <SubHeader heading="Location Details" />
+      <CustomBackButton navigation={() => props.navigation.goBack()}  heading="Location Details"/>
       <ScrollView showsVerticalScrollIndicator={false}>
         <CountryDropDown
           token={token}
@@ -131,7 +139,7 @@ const ScreenThree = (props) => {
         {dCountryId == undefined ? (
           <></>
         ) : (
-          <StateDropDown
+          <DStateDropDown
             token={token}
             cId={dCountryId}
             stateId={setDState}

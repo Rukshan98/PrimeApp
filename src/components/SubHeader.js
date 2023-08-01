@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         fontFamily:'Poppins',
         color: "#2F679B",
         fontSize:responsiveFontSize(3),
-        textDecorationLine:'underline',
+        // textDecorationLine:'underline',
 
     }
     

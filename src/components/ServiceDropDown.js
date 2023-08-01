@@ -4,6 +4,7 @@ import { SelectList } from "react-native-dropdown-select-list";
 import { useFocusEffect } from "@react-navigation/native";
 
 import { getServices } from "../services/Services";
+import { responsiveFontSize } from "react-native-responsive-dimensions";
 
 const ServiceDropDown = (props) => {
   const [services, setServices] = useState([]);
@@ -61,9 +62,10 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   text: {
-    fontFamily: "Poppins",
+    fontFamily: "PoppinsB",
     marginVertical: 10,
-    color: "#2F679B",
+    color: "#000",
+    fontSize:responsiveFontSize(2)
   },
   list: {
     color: "#2F679B",

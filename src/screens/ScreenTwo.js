@@ -51,6 +51,9 @@ const ScreenTwo = (props) => {
   console.log("the volumetric weight--->", volWeight);
   const [weight, setWeight] = useState();
   const [qty, setqty] = useState();
+  const [height, setHeight] = useState();
+  const [width,setWidth] = useState()
+  const [length,setlength] = useState()
 
   const validate = () => {
     if (
@@ -76,6 +79,9 @@ const ScreenTwo = (props) => {
         commodity:commodity,
         qty:qty,
         tokenId: token,
+        height:height,
+        width:width,
+        length:length
       });
     }
   };
@@ -86,15 +92,15 @@ const ScreenTwo = (props) => {
       style={styles.container}
     >
       <StatusBar backgroundColor="white" barStyle="dark-content" />
-      <CustomBackButton navigation={() => props.navigation.goBack()} />
-      <SubHeader heading="Shipment Details" />
+      <CustomBackButton navigation={() => props.navigation.goBack()} heading="Shipment Details" />
+      {/* <SubHeader heading="Shipment Details" /> */}
       <ScrollView showsVerticalScrollIndicator={false}>
         <ServiceDropDown token={token} serviceId={setServiceId} service={setService}/>
         <PackageDropDown token={token} packageId={setPackageId} package={setPackage}/>
         <ComodityDropDown token={token} commodityId={setCommodityId} commodity={setCommodity}/>
         <CustomTextInput feildName="Weight" value={setWeight}   numberpad={true}/>
         <CustomTextInput feildName="Quantity" value={setqty}   numberpad={true}/>
-        <CalculateWeight volumetric={setVolWeight} />
+        <CalculateWeight volumetric={setVolWeight} H={setHeight}  W={setWidth} L={setlength}/>
         <CustomButton name="Next" navigation={() => validate()} />
       </ScrollView>
     </LinearGradient>
