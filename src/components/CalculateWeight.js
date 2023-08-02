@@ -35,6 +35,7 @@ const CalculateWeight = (props) => {
             value={length}
             returnKeyType="done"
           />
+             <Text style={styles.cm}>CM</Text>
           <TextInput
             style={styles.textInput}
             placeholder="H"
@@ -46,6 +47,7 @@ const CalculateWeight = (props) => {
             returnKeyType="done"
 
           />
+             <Text style={styles.cm}>CM</Text>
           <TextInput
             style={styles.textInput}
             placeholder="W"
@@ -56,6 +58,7 @@ const CalculateWeight = (props) => {
             value={width}
             returnKeyType="done"
           />
+          <Text style={styles.cm}>CM</Text>
       
       
 
@@ -101,6 +104,10 @@ const styles = StyleSheet.create({
     color:'red',
     textDecorationLine:'underline',
     marginLeft:5
+  },
+  cm:{
+    alignSelf:'center',
+    marginRight:3
   }
 });
 export default CalculateWeight;

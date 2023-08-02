@@ -15,11 +15,12 @@ const StateDropDown = (props) => {
     const countryId = props.cId;
 
     const getData = () => {
+      console.log('this is the country ID------->',countryId)
     setLoading(true)
         getState(props.token,countryId)
           .then((response) => {
             setState(response.data.states);
-            // console.log('state--->',response.data.states)
+            console.log('state--------------->',response.data.states)
           })
           .catch(console.error).finally(setLoading(false));
       };

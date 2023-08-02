@@ -98,7 +98,7 @@ const ScreenTwo = (props) => {
         <ServiceDropDown token={token} serviceId={setServiceId} service={setService}/>
         <PackageDropDown token={token} packageId={setPackageId} package={setPackage}/>
         <ComodityDropDown token={token} commodityId={setCommodityId} commodity={setCommodity}/>
-        <CustomTextInput feildName="Weight" value={setWeight}   numberpad={true}/>
+        <CustomTextInput feildName="Weight -(kg)" value={setWeight}   numberpad={true}/>
         <CustomTextInput feildName="Quantity" value={setqty}   numberpad={true}/>
         <CalculateWeight volumetric={setVolWeight} H={setHeight}  W={setWidth} L={setlength}/>
         <CustomButton name="Next" navigation={() => validate()} />

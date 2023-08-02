@@ -18,7 +18,7 @@ export const getState = async (payload,add) => {
                 Accept: "application/json",
                 Authorization: "Bearer " + payload
             },
-            timeout: 5000,
+            timeout: 10000,
         });
 
         let response = await axiosClient.get(Endpoints.state+add);
