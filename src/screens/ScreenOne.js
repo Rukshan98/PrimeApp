@@ -50,6 +50,7 @@ const ScreenOne = (props) => {
   };
 
   const validate = () => {
+
     if (
       name == undefined ||
       email == undefined ||
@@ -58,6 +59,8 @@ const ScreenOne = (props) => {
       return alert("Please fill all feilds!!!");
       // props.navigation.navigate(Screens.SCREEN_TWO, { tokenId: token })
     } else {
+
+      
       props.navigation.navigate(Screens.SCREEN_TWO, {
         name:name,
         email:email,
@@ -110,7 +113,7 @@ const ScreenOne = (props) => {
           numberpad={true}
         />
    
-        <CustomButton name="Next" navigation={() => validate()} />
+        <CustomButton name="Next" navigation={()=>validate()} />
       </ScrollView>
     </LinearGradient>
   );

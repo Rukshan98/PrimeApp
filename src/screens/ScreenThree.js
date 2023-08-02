@@ -64,6 +64,7 @@ const ScreenThree = (props) => {
   const [dStateN, setDStateN] = useState();
   console.log("destination State id--->", dState);
   console.log("destination State id--->", dStateN);
+  const [address, setAddress] = useState();
 
   const validate = () => {
     if (
@@ -98,7 +99,8 @@ const ScreenThree = (props) => {
         tokenId: token,
         height:height,
         width:width,
-        length:length
+        length:length,
+        address:address
       });
     }
   };
@@ -147,6 +149,13 @@ const ScreenThree = (props) => {
             name="Destination State"
           />
         )}
+
+<CustomTextInput
+          feildName="Destination address"
+          value={setAddress}
+          data={address}
+      
+        />
 
         <CustomButton
           name="Next"

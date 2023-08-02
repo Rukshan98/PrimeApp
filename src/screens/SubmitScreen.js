@@ -58,6 +58,7 @@ const SubmitScreen = (props) => {
   const height = props.route.params.height; 
   const width = props.route.params.width; 
   const length = props.route.params.length;  
+  const address = props.route.params.address;  
 
   const  date = new Date().getDate();
   const month = new Date().getMonth() + 1;
@@ -74,7 +75,7 @@ const onClickSubmit = () =>{
     date : time,
     customer_name :name,
     email_add : email ,
-    address : "N/A",
+    address : address,
     contact_no : mobile,
     service_id : serviceId,
     commodity_id : commodityId,
@@ -125,7 +126,8 @@ postBooking(token,payload).then((response)=>{
         <CustomLable feildName='Origin' value={oCountry}/>
         <CustomLable feildName='Origin State' value={oStateN}/>
         <CustomLable feildName='Destination' value={dCountry}/>
-        <CustomLable feildName='Origin State' value={dStateN}/>       
+        <CustomLable feildName='Destination State' value={dStateN}/>     
+        <CustomLable feildName='Destination address' value={address}/>    
         <CustomLable feildName='Height' value={height}/>
         <CustomLable feildName='Width' value={width}/>
         <CustomLable feildName='Length' value={length}/>
