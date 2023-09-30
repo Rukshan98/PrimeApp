@@ -56,18 +56,19 @@ const ComodityDropDown = (props) => {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 8,
-    borderColor: "#2F679B",
+    borderColor: "grey",
     height: 50,
-    marginVertical: 5,
+    marginTop:2,
+    marginBottom:5
   },
   text: {
-    fontFamily: "PoppinsB",
-    marginVertical: 10,
+    fontFamily: "Poppins",
+      marginTop:10,
     color: "#000",
     fontSize:responsiveFontSize(2)
   },
   list: {
-    color: "#2F679B",
+    color: "grey",
   },
 });
 

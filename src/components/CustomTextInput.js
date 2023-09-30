@@ -25,17 +25,19 @@ const styles = StyleSheet.create({
   container: {},
   textInputContainer: {
     // backgroundColor:'red',
-    borderColor: "#2F679B",
+    borderColor: "grey",
     borderWidth: 1,
-    height: responsiveHeight(5),
+    height: responsiveHeight(5.5),
     borderRadius: 8,
-    color: "#2F679B",
+    color: "#000",
     padding: 5,
+    // elevation:5
   },
   text: {
-    fontFamily: "PoppinsB",
-    marginVertical: 10,
-    color: "#000",
+    fontFamily: "Poppins",
+    marginTop:10,
+    marginBottom:3,
+    // color: "#000",
     fontSize:responsiveFontSize(2)
   },
 });

@@ -28,11 +28,19 @@ const ServiceDropDown = (props) => {
     }
   };
 
-  useFocusEffect(
-    useCallback(() => {
-      getData();
-    }, [])
-  );
+  // useFocusEffect(
+  //   useCallback(() => {
+  //     getData();
+  //   }, [])
+  // );
+
+  const data = [
+    {key:'1', value:'Courier service'},
+    {key:'2', value:'Air freight'},
+    {key:'3', value:'Sea freight'},
+    {key:'4', value:'Land freight'},
+    
+]
 
   return (
     <View>
@@ -42,10 +50,12 @@ const ServiceDropDown = (props) => {
           props.serviceId(value);
           setSelectedService(value);
         }}
-        onSelect={() => forService()}
-        data={services.map((item) => {
-          return { key: item.service_id, value: item.en_name };
-        })}
+        // setSelected={(value)=>setSelectedService(value)}
+        // onSelect={() => forService()}
+        // data={services.map((item) => {
+        //   return { key: item.service_id, value: item.en_name };
+        // })}
+        data={data}
         boxStyles={styles.container}
         fontFamily="Poppins"
         inputStyles={styles.list}
@@ -57,18 +67,19 @@ const ServiceDropDown = (props) => {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 8,
-    borderColor: "#2F679B",
+    borderColor: "grey",
     height: 50,
-    marginVertical: 5,
+    marginTop:2,
+    marginBottom:5
   },
   text: {
-    fontFamily: "PoppinsB",
-    marginVertical: 10,
+    fontFamily: "Poppins",
+    marginTop:10,
     color: "#000",
     fontSize:responsiveFontSize(2)
   },
   list: {
-    color: "#2F679B",
+    color: "grey",
   },
 });
 

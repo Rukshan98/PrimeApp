@@ -87,15 +87,21 @@ const ScreenTwo = (props) => {
   };
 
   return (
-    <LinearGradient
-      colors={["rgba(255, 255, 255, 0)", "rgba(25, 39, 68, 0.39)"]}
+    <View
+    
       style={styles.container}
     >
-      <StatusBar backgroundColor="white" barStyle="dark-content" />
+      <StatusBar backgroundColor="rgba(250, 196, 18, 0.905) 0)" barStyle="dark-content" />
       <CustomBackButton navigation={() => props.navigation.goBack()} heading="Shipment Details" />
       {/* <SubHeader heading="Shipment Details" /> */}
-      <ScrollView showsVerticalScrollIndicator={false}>
+   <View style={styles.container2}>
+   <ScrollView showsVerticalScrollIndicator={false}>
         <ServiceDropDown token={token} serviceId={setServiceId} service={setService}/>
+     
+
+
+
+
         <PackageDropDown token={token} packageId={setPackageId} package={setPackage}/>
         <ComodityDropDown token={token} commodityId={setCommodityId} commodity={setCommodity}/>
         <CustomTextInput feildName="Weight -(kg)" value={setWeight}   numberpad={true}/>
@@ -103,17 +109,27 @@ const ScreenTwo = (props) => {
         <CalculateWeight volumetric={setVolWeight} H={setHeight}  W={setWidth} L={setlength}/>
         <CustomButton name="Next" navigation={() => validate()} />
       </ScrollView>
-    </LinearGradient>
+
+   </View>
+    
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === "ios" ? 40 : 15,
     paddingBottom: 15,
-    paddingHorizontal: responsiveWidth(3),
+    // paddingHorizontal: responsiveWidth(3),
+    backgroundColor:'white'
   },
+  container2:{
+    flex: 1,
+    paddingBottom: 15,
+    paddingVertical:30,
+    paddingHorizontal: responsiveWidth(3),
+    backgroundColor:'white'
+  }
 });
 
 export default ScreenTwo;

@@ -82,14 +82,14 @@ const SubmitScreen = (props) => {
       origin_id: oCountryId,
       o_state_id: oState,
       destination_id: dCountryId,
-      d_state_id: dState,
+      d_state_id:  dState,
       quantity: qty,
       leng: length,
       width: width,
       height: height,
       weight: weight,
       remarks: "Test",
-      sales_id: salesId,
+      sales_id: 1,
     };
 
     if (salesId == undefined) {
@@ -129,10 +129,10 @@ const SubmitScreen = (props) => {
         <CustomLable feildName="Package type" value={packageN} />
         <CustomLable feildName="Commodity" value={commodity} />
         <CustomLable feildName="Origin" value={oCountry} />
-        <CustomLable feildName="Origin State" value={oStateN} />
+        <CustomLable feildName="Origin State" value={oStateN == undefined ? 'Null': oStateN} />
         <CustomLable feildName="Destination" value={dCountry} />
-        <CustomLable feildName="Destination State" value={dStateN} />
-        <CustomLable feildName="Destination address" value={address} />
+        <CustomLable feildName="Destination State" value={dStateN == undefined ? 'Null': dStateN} />
+        <CustomLable feildName="Destination address" value={address == undefined ? 'Null':address} />
         <CustomLable feildName="Height" value={height} />
         <CustomLable feildName="Width" value={width} />
         <CustomLable feildName="Length" value={length} />

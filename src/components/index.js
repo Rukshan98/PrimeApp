@@ -13,6 +13,7 @@ import StateDropDown from "./StateDropDown";
 import SalesDropDown from "./SalesDropDown";
 import CustomLable from "./CustomLable";
 import DStateDropDown from "./DStateDropDown";
+import ProductType from "./ProductType";
 
 export{
     Header,
@@ -29,5 +30,6 @@ export{
     StateDropDown,
     SalesDropDown,
     CustomLable,
-    DStateDropDown
+    DStateDropDown,
+    ProductType
 }

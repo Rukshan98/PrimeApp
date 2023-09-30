@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image,Platform } from "react-native";
 import React from "react";
 import {
   responsiveFontSize,
@@ -7,13 +7,17 @@ import {
 
 const Header = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.headingText}>Customer{"\n"}Inquiry</Text>
-      <Image
-        source={require("../../assets/New-logo-Prime.png")}
-        style={styles.headerImage}
-      />
+    <View>
+        <View style={styles.fill}/>
+        <View style={styles.container}>
+    
+    <Image
+      source={require("../../assets/New-logo-Prime.png")}
+      style={styles.headerImage}
+    />
+  </View>
     </View>
+   
   );
 };
 
@@ -21,7 +25,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 50,
     flexDirection: "row",
-    marginBottom:50
+    marginBottom:50,
   },
   headingText: {
     fontFamily: "PoppinsB",
@@ -31,10 +35,17 @@ const styles = StyleSheet.create({
   },
   headerImage: {
     flex: 1,
-    height: 50,
+    height: 100,
     resizeMode: "contain",
-    marginTop:30
+    marginRight:40
   },
+  fill:{
+    paddingTop:Platform.OS == "ios" ? 50 : 10,
+    paddingBottom:Platform.OS == "ios" ? 20 : 10,
+    height:10,
+    width:'100%',
+    backgroundColor:'rergba(250, 196, 18, 0.905) 0)d'
+  }
 });
 
 export default Header;
